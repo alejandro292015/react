@@ -3,7 +3,7 @@ import Ingredientes from './components/filtro';
 import Cabezera from './components/Cabezera';
 import 'bootstrap/dist/css/bootstrap.min.css';
  import './styles/app.css'
- import './styles/Platos.css'
+ import './styles/filtro.css'
  import './styles/work.css'
 import Work from './components/workout';
 function  App(){

@@ -1,0 +1,14 @@
+
+    
+  
+
+h4{
+    color: blueviolet;
+}
+.platos{
+    background-image: url(../assets/3.jpg);
+    width: 1400px;
+    height: 220px;
+    border-radius: 10px;
+    background-color: rgb(41, 67, 68);
+}
