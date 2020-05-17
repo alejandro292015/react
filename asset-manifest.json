@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/repository-name/static/css/main.e9f9589c.chunk.css",
-    "main.js": "/repository-name/static/js/main.670fbd60.chunk.js",
-    "main.js.map": "/repository-name/static/js/main.670fbd60.chunk.js.map",
-    "runtime-main.js": "/repository-name/static/js/runtime-main.4291b153.js",
-    "runtime-main.js.map": "/repository-name/static/js/runtime-main.4291b153.js.map",
-    "static/css/2.de424728.chunk.css": "/repository-name/static/css/2.de424728.chunk.css",
-    "static/js/2.15ab15ee.chunk.js": "/repository-name/static/js/2.15ab15ee.chunk.js",
-    "static/js/2.15ab15ee.chunk.js.map": "/repository-name/static/js/2.15ab15ee.chunk.js.map",
-    "index.html": "/repository-name/index.html",
-    "precache-manifest.5901e50f6cd7018958a4e441cccdd47e.js": "/repository-name/precache-manifest.5901e50f6cd7018958a4e441cccdd47e.js",
-    "service-worker.js": "/repository-name/service-worker.js",
-    "static/css/2.de424728.chunk.css.map": "/repository-name/static/css/2.de424728.chunk.css.map",
-    "static/css/main.e9f9589c.chunk.css.map": "/repository-name/static/css/main.e9f9589c.chunk.css.map",
-    "static/js/2.15ab15ee.chunk.js.LICENSE.txt": "/repository-name/static/js/2.15ab15ee.chunk.js.LICENSE.txt",
-    "static/media/filtro.css": "/repository-name/static/media/3.3f2eff43.jpg"
+    "main.css": "/sena.github.io/static/css/main.36aa1989.chunk.css",
+    "main.js": "/sena.github.io/static/js/main.670fbd60.chunk.js",
+    "main.js.map": "/sena.github.io/static/js/main.670fbd60.chunk.js.map",
+    "runtime-main.js": "/sena.github.io/static/js/runtime-main.75a7ced1.js",
+    "runtime-main.js.map": "/sena.github.io/static/js/runtime-main.75a7ced1.js.map",
+    "static/css/2.de424728.chunk.css": "/sena.github.io/static/css/2.de424728.chunk.css",
+    "static/js/2.15ab15ee.chunk.js": "/sena.github.io/static/js/2.15ab15ee.chunk.js",
+    "static/js/2.15ab15ee.chunk.js.map": "/sena.github.io/static/js/2.15ab15ee.chunk.js.map",
+    "index.html": "/sena.github.io/index.html",
+    "precache-manifest.c14ba2e2f3f39f1c0cf1c3f54343ceee.js": "/sena.github.io/precache-manifest.c14ba2e2f3f39f1c0cf1c3f54343ceee.js",
+    "service-worker.js": "/sena.github.io/service-worker.js",
+    "static/css/2.de424728.chunk.css.map": "/sena.github.io/static/css/2.de424728.chunk.css.map",
+    "static/css/main.36aa1989.chunk.css.map": "/sena.github.io/static/css/main.36aa1989.chunk.css.map",
+    "static/js/2.15ab15ee.chunk.js.LICENSE.txt": "/sena.github.io/static/js/2.15ab15ee.chunk.js.LICENSE.txt",
+    "static/media/filtro.css": "/sena.github.io/static/media/3.3f2eff43.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.4291b153.js",
+    "static/js/runtime-main.75a7ced1.js",
     "static/css/2.de424728.chunk.css",
     "static/js/2.15ab15ee.chunk.js",
-    "static/css/main.e9f9589c.chunk.css",
+    "static/css/main.36aa1989.chunk.css",
     "static/js/main.670fbd60.chunk.js"
   ]
 }
