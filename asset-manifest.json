@@ -1,26 +1,22 @@
 {
   "files": {
-    "main.css": "/sena.github.io/static/css/main.36aa1989.chunk.css",
-    "main.js": "/sena.github.io/static/js/main.670fbd60.chunk.js",
-    "main.js.map": "/sena.github.io/static/js/main.670fbd60.chunk.js.map",
-    "runtime-main.js": "/sena.github.io/static/js/runtime-main.75a7ced1.js",
-    "runtime-main.js.map": "/sena.github.io/static/js/runtime-main.75a7ced1.js.map",
-    "static/css/2.de424728.chunk.css": "/sena.github.io/static/css/2.de424728.chunk.css",
-    "static/js/2.15ab15ee.chunk.js": "/sena.github.io/static/js/2.15ab15ee.chunk.js",
-    "static/js/2.15ab15ee.chunk.js.map": "/sena.github.io/static/js/2.15ab15ee.chunk.js.map",
-    "index.html": "/sena.github.io/index.html",
-    "precache-manifest.c14ba2e2f3f39f1c0cf1c3f54343ceee.js": "/sena.github.io/precache-manifest.c14ba2e2f3f39f1c0cf1c3f54343ceee.js",
-    "service-worker.js": "/sena.github.io/service-worker.js",
-    "static/css/2.de424728.chunk.css.map": "/sena.github.io/static/css/2.de424728.chunk.css.map",
-    "static/css/main.36aa1989.chunk.css.map": "/sena.github.io/static/css/main.36aa1989.chunk.css.map",
-    "static/js/2.15ab15ee.chunk.js.LICENSE.txt": "/sena.github.io/static/js/2.15ab15ee.chunk.js.LICENSE.txt",
-    "static/media/filtro.css": "/sena.github.io/static/media/3.3f2eff43.jpg"
+    "main.css": "/REACT.github.io/static/css/main.5dd9808a.chunk.css",
+    "main.js": "/REACT.github.io/static/js/main.f41f8102.chunk.js",
+    "main.js.map": "/REACT.github.io/static/js/main.f41f8102.chunk.js.map",
+    "runtime-main.js": "/REACT.github.io/static/js/runtime-main.cb1cd706.js",
+    "runtime-main.js.map": "/REACT.github.io/static/js/runtime-main.cb1cd706.js.map",
+    "static/js/2.9f70cf1a.chunk.js": "/REACT.github.io/static/js/2.9f70cf1a.chunk.js",
+    "static/js/2.9f70cf1a.chunk.js.map": "/REACT.github.io/static/js/2.9f70cf1a.chunk.js.map",
+    "index.html": "/REACT.github.io/index.html",
+    "precache-manifest.221223a2b6a6beb83e21c753cd3e97b0.js": "/REACT.github.io/precache-manifest.221223a2b6a6beb83e21c753cd3e97b0.js",
+    "service-worker.js": "/REACT.github.io/service-worker.js",
+    "static/css/main.5dd9808a.chunk.css.map": "/REACT.github.io/static/css/main.5dd9808a.chunk.css.map",
+    "static/js/2.9f70cf1a.chunk.js.LICENSE.txt": "/REACT.github.io/static/js/2.9f70cf1a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.75a7ced1.js",
-    "static/css/2.de424728.chunk.css",
-    "static/js/2.15ab15ee.chunk.js",
-    "static/css/main.36aa1989.chunk.css",
-    "static/js/main.670fbd60.chunk.js"
+    "static/js/runtime-main.cb1cd706.js",
+    "static/js/2.9f70cf1a.chunk.js",
+    "static/css/main.5dd9808a.chunk.css",
+    "static/js/main.f41f8102.chunk.js"
   ]
 }
