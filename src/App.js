@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
  import './styles/filtro.css'
  import './styles/work.css'
 import Work from './components/workout';
-function  App(){
+  const App = () =>{
   return(
     <div className="App">
     <Cabezera /> 
