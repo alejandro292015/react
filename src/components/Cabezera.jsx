@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-class Cabezera extends Component {
-  render() {
+const Cabezera = (props) => {
     return (
       <div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -37,6 +36,11 @@ class Cabezera extends Component {
                  Dieta
                 </a>
               </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                <i class="fa fa-circle-thin" aria-hidden="true">{props.registros}</i> 
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
@@ -45,6 +49,4 @@ class Cabezera extends Component {
 
     );
   }
-}
-
 export default Cabezera;

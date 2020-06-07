@@ -12,7 +12,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
  import Work from './components/workout';
  const App = () =>{
      const usersData = [
-       { id: uuidv4(), name: 'Tania', username: 'floppydiskette' },
+       { id: uuidv4(), name: 'Tania', username: 'floppydiskette', correo :'aaa@gmail.com' },
        { id: uuidv4(), name: 'Craig', username: 'siliconeidolon' },
        { id: uuidv4(), name: 'Ben', username: 'benisphere' },
      ];
@@ -42,12 +42,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
      // editar
      
      const [editing, setEditing] = useState(false);
-     const [currentUser, setCurrenUser] = useState({id: null, name:'',username:''});
+     const [currentUser, setCurrenUser] = useState({id: null, name:'',username:'',correo:''});
      
      const editRow = (user) => {
      setEditing(true);
      setCurrenUser({
-     id:user.id , name:user.name, username:user.username
+     id:user.id , name:user.name, username:user.username, correo:user.correo
      })
      }
      
@@ -59,15 +59,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
      
  
      return (
-     <div className="container">
-        <Cabezera /> 
+     <div>
+   
+        <Cabezera registros={users.length}/> 
        <div className="flex-row">
          <div className="flex-large">
     
        
          {
            editing ?(
-             <div>
+             <div className="ml-5">
                <h2>Edit user</h2>
            <EditUserForm
            currentUser={currentUser} 
@@ -75,23 +76,26 @@ import 'bootstrap/dist/css/bootstrap.min.css';
            />
              </div>
            ) : (
-             <div>
-             <h2>Add user</h2>
+             <div className="ml-3 container">
              <AddUserForm addUser={addUser} />
              </div>
            )
      
          }
+         
          </div>
-         <div className="flex-large">
+         <div className="flex-large mt-5">
            <UserTable users={users}
+            registros={users.length}
             deleteUser={deleteUser}
             editRow={editRow}/>
          </div>
        </div>
-      
+     <div className="ml-4">
     <Ingredientes /> 
+
     <Work /> 
+     </div> 
      </div>
      );
      

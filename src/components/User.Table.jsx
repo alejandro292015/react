@@ -1,15 +1,19 @@
 import React, { useReducer } from 'react';
+import { BsFillDashCircleFill, BsPencilSquare} from "react-icons/bs";
+
 const UserTable = (props)  => {
 
     console.log('props',props.users);
     
     return (
-          <table>
+          <table class="table table-dark">
     <thead>
       <tr>
         <th>Nombre </th>
         <th>Nombre de usuario</th>
-        <th>accion</th>
+        <th>Correo</th>
+        <th>Accion</th>
+        <th><i class="fa fa-circle-thin" aria-hidden="true">{props.registros}</i></th>
       </tr>
     </thead>
     <tbody>
@@ -19,16 +23,17 @@ const UserTable = (props)  => {
             <tr key={user.id}>
                 <td>{user.name}</td>
                 <td>{user.username}</td>
+                <td>{user.correo}</td>
                 <td>
-                <button className="button muted-button"
+                <button className="btn btn-success"
                 onClick ={
                     () => {props.editRow(user)}
                 }
-                >Editar</button>
+                ><BsPencilSquare /> Editar</button>
                 <button 
-                className="button muted-button ml-2"
+                className="btn btn-danger ml-2"
                 onClick ={() => {props.deleteUser(user.id)}}
-                >Eliminar
+                > <BsFillDashCircleFill /> Eliminar
                 </button>
                 
                 </td>
@@ -43,6 +48,7 @@ const UserTable = (props)  => {
         
     </tbody>
   </table>
+  
      );
 }
 

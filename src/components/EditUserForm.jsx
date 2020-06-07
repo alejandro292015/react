@@ -1,5 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { BsFillCapslockFill, BsPencilSquare} from "react-icons/bs";
+
 
 const EditUserForm = (props) => {
 
@@ -11,6 +13,7 @@ const EditUserForm = (props) => {
     
     setValue('name', props.currentUser.name)
     setValue('username', props.currentUser.username)
+    setValue('correo', props.currentUser.correo)
      
     const onSubmit = (data, e) => {
         
@@ -40,7 +43,22 @@ const EditUserForm = (props) => {
          <div>
             {errors?.username?.menssage}
         </div>
-        <button>Edit new user</button>
+
+        <label>Correo</label>
+        <input type="text" name="correo" ref={
+            register({
+                required:{value:true,menssage:'campo requerido'}
+            })}
+             />
+         <div>
+            {errors?.correo?.menssage}
+        </div>
+        <button className="btn btn-success"><BsPencilSquare />
+        <span className="mt-2  ml-2">
+        Editar usuario
+
+        </span>
+        </button>
       </form>
     )
 }

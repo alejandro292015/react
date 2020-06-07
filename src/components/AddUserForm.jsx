@@ -1,5 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { BsFillCapslockFill, BsPencilSquare} from "react-icons/bs";
+
 
 const AddUserForm = (props) => {
 
@@ -32,7 +34,21 @@ const AddUserForm = (props) => {
          <div>
             {errors?.username?.menssage}
         </div>
-        <button>Agregar un nuevo usuario</button>
+
+        <label>Correo</label>
+        <input type="text" name="correo" ref={
+            register({
+                required:{value:true,menssage:'campo requerido'}
+            })}
+             />
+         <div>
+            {errors?.username?.correo}
+        </div>
+        <button className="btn btn-success"><BsFillCapslockFill />
+        <span className="mt-2  ml-2">
+         Agregar usuario
+         </span>
+         </button>
       </form>
     )
 }
