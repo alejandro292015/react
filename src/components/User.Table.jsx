@@ -1,55 +1,46 @@
-import React, { useReducer } from 'react';
-import { BsFillDashCircleFill, BsPencilSquare} from "react-icons/bs";
+import React from 'react';
 
-const UserTable = (props)  => {
+const UserTable = () => {
 
-    console.log('props',props.users);
-    
-    return (
-          <table class="table table-dark">
-    <thead>
-      <tr>
-        <th>Nombre </th>
-        <th>Nombre de usuario</th>
-        <th>Correo</th>
-        <th>Accion</th>
-        <th><i class="fa fa-circle-thin" aria-hidden="true">{props.registros}</i></th>
-      </tr>
-    </thead>
-    <tbody>
-        {
-            props.users.length > 0 ?
-            props.users.map(user =>(
-            <tr key={user.id}>
-                <td>{user.name}</td>
-                <td>{user.username}</td>
-                <td>{user.correo}</td>
-                <td>
-                <button className="btn btn-success"
-                onClick ={
-                    () => {props.editRow(user)}
-                }
-                ><BsPencilSquare /> Editar</button>
-                <button 
-                className="btn btn-danger ml-2"
-                onClick ={() => {props.deleteUser(user.id)}}
-                > <BsFillDashCircleFill /> Eliminar
-                </button>
-                
-                </td>
-            </tr>
+  const [equipo, setEquipo] = React.useState([]);
 
-            )) : (
-                <tr>
-                <td colSpan={3}>No users</td>
-              </tr>
-            )
-        }
-        
-    </tbody>
-  </table>
-  
-     );
-}
+  React.useEffect(() => {
+    obtenerDatos();
+  }, []);
+
+  const obtenerDatos = async () => {
+    const data = await fetch(
+      'https://reac-api-rest.000webhostapp.com/api/read.php'
+    );
+    const users = await data.json();
+    setEquipo(users);
+  };
+  return (
+<table class="table table-striped table-dark">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Identificacion</th>
+          <th>Correo</th>
+        </tr>
+      </thead>
+      <tbody>
+        {equipo.map((item) => (
+          <tr key={item.id}>
+            <td>{item.nombre}</td>
+            <td>{item.apellido}</td>
+            <td>{item.identificacion}</td>
+            <td>{item.correo}</td>
+            <td>
+              <button type="button"  className="btn btn btn-success ml-2">Editar</button>
+              <button type="button" class="btn btn btn-danger ml-2">Eliminar</button>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+};
 
 export default UserTable;

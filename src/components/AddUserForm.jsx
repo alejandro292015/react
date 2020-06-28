@@ -1,55 +1,71 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useForm } from 'react-hook-form'
 import { BsFillCapslockFill, BsPencilSquare} from "react-icons/bs";
+import Axios from 'axios';
+import Swal from 'sweetalert2'
 
 
-const AddUserForm = (props) => {
+export default function AddUserForm(props) {
 
-    const {register, errors, handleSubmit} = useForm();
+ const url = "https://reac-api-rest.000webhostapp.com/api/insert.php"
+
+ const [data, setdata]=useState(
+     {
+         nombre: "",
+         apellido: "",
+         identificacion: "",
+         correo: "",
+     }
+     )
      
-    const onSubmit = (data, e) => {
-         
-        props.addUser(data)
+     function submit(e){
+         debugger
+         e.preventDefault()
+         Axios.post(url,JSON.stringify(data))
+         .then(res => {
+             res.data = data;
+             Swal.fire({
+                icon: 'success',
+                title: 'Operacion Exitosa',
+                text: 'Datos Insertados Correctamente',
+              })
+            //  fetch(Url, {
+            //     method: 'POST', // or 'PUT'
+            //     body: JSON.stringify(data), // data can be `string` or {object}!
+            //     headers:{
+            //       'Content-Type': 'application/json'
+            //     }
+            //   }).then(res => res.json())
+            //   .catch(error => console.error('Error:', error))
+            //   .then(response => console.log('Success:', response));
+            
+             
+    })
+ }
 
-        e.target.reset();
-       
-    }
-    return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Nombre</label>
-        <input type="text" name="name" ref={
-            register({
-                required: {value:true, menssage:'campo requerido'}
-            })
-        }  />
-        <div>
-            {errors?.name?.menssage}
-        </div>
-        <label>Nombre de usuario</label>
-        <input type="text" name="username" ref={
-            register({
-                required:{value:true,menssage:'campo requerido'}
-            })}
-             />
-         <div>
-            {errors?.username?.menssage}
-        </div>
+ function handle(e){
+   
+    const newData = {...data};
+    newData[e.target.id] = e.target.value;
+    setdata(newData)
+ }
+ return (
+     <div className="container">
+     <br />
+         <form onSubmit= {(e)=>submit(e)}>
+         <div className="form-group">
+         <label for="nombre">Nombre</label>
+         <input onChange={(e)=>handle(e)}  value={data.nombre} type="text" name="nombre" className="form-control" id="nombre" placeholder="nombre" />
+         <label for="apellido">Apellido</label>
+         <input onChange={(e)=>handle(e)} value={data.apellido} type="text" name="apellido" className="form-control" id="apellido" placeholder="apellido" />
+         <label for="identificacion">Identificacion</label>
+         <input onChange={(e)=>handle(e)} value={data.identificacion} type="text" name="identificacion" className="form-control" id="identificacion" placeholder="identificacion" />
+         <label for="correo">Correo</label>
+         <input onChange={(e)=>handle(e)} value={data.correo} type="text" name="correo" className="form-control" id="correo" placeholder="correo" />
+         </div>
 
-        <label>Correo</label>
-        <input type="text" name="correo" ref={
-            register({
-                required:{value:true,menssage:'campo requerido'}
-            })}
-             />
-         <div>
-            {errors?.username?.correo}
-        </div>
-        <button className="btn btn-success"><BsFillCapslockFill />
-        <span className="mt-2  ml-2">
-         Agregar usuario
-         </span>
-         </button>
-      </form>
-    )
+         <button type="submit" className="btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i>Agregar </button>
+         </form>
+     </div>
+ )
 }
-export default AddUserForm
