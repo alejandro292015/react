@@ -1,65 +1,71 @@
-import React from 'react'
-import { useForm } from 'react-hook-form'
-import { BsFillCapslockFill, BsPencilSquare} from "react-icons/bs";
+import React, { useState } from "react";
+import Axios from "axios";
+import Swal from 'sweetalert2';
 
 
 const EditUserForm = (props) => {
 
     
+    const url = "https://api-new-03.herokuapp.com/update.php"
 
-    const {register, errors, handleSubmit, setValue} = useForm({
-        defaultValues: props.currentUser
-    });
-    
-    setValue('name', props.currentUser.name)
-    setValue('username', props.currentUser.username)
-    setValue('correo', props.currentUser.correo)
-     
-    const onSubmit = (data, e) => {
+    const [data, setdata]=useState(
+          {  id : "",
+            nombre: "",
+            apellido: "",
+            identificacion: "",
+            correo: "",
+        }
+        )
         
-         data.id = props.currentUser.id
-        
-        props.updateUser(props.currentUser.id,data)
-        e.target.reset();
-       
+        function submit(e){
+            debugger
+            e.preventDefault()
+            Axios.post(url,JSON.stringify(data))
+            .then(res => {
+                res.data = data;
+                Swal.fire({
+                   icon: 'success',
+                   title: 'Operacion Exitosa',
+                   text: 'Datos Insertados Correctamente',
+                 })
+               //  fetch(Url, {
+               //     method: 'POST', // or 'PUT'
+               //     body: JSON.stringify(data), // data can be `string` or {object}!
+               //     headers:{
+               //       'Content-Type': 'application/json'
+               //     }
+               //   }).then(res => res.json())
+               //   .catch(error => console.error('Error:', error))
+               //   .then(response => console.log('Success:', response));
+               
+                
+       })
+    }
+   
+    function handle(e){
+      
+       const newData = {...data};
+       newData[e.target.id] = e.target.value;
+       setdata(newData)
     }
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-        <label>Nombre</label>
-        <input type="text" name="name" ref={
-            register({
-                required: {value:true, menssage:'campo requerido'}
-            })
-        }  />
-        <div>
-            {errors?.name?.menssage}
+        <div className="container">
+        <br />
+            <form onSubmit= {(e)=>submit(e)}>
+            <div className="form-group">
+            <label for="nombre">Nombre</label>
+            <input onChange={(e)=>handle(e)}  value={data.nombre} type="text" name="nombre" className="form-control" id="nombre" placeholder="nombre" />
+            <label for="apellido">Apellido</label>
+            <input onChange={(e)=>handle(e)} value={data.apellido} type="text" name="apellido" className="form-control" id="apellido" placeholder="apellido" />
+            <label for="identificacion">Identificacion</label>
+            <input onChange={(e)=>handle(e)} value={data.identificacion} type="text" name="identificacion" className="form-control" id="identificacion" placeholder="identificacion" />
+            <label for="correo">Correo</label>
+            <input onChange={(e)=>handle(e)} value={data.correo} type="text" name="correo" className="form-control" id="correo" placeholder="correo" />
+            </div>
+   
+            <button type="submit" className="btn-success"><i class="fa fa-plus-circle" aria-hidden="true"></i>Agregar </button>
+            </form>
         </div>
-        <label>Nombre de usuario</label>
-        <input type="text" name="username" ref={
-            register({
-                required:{value:true,menssage:'campo requerido'}
-            })}
-             />
-         <div>
-            {errors?.username?.menssage}
-        </div>
-
-        <label>Correo</label>
-        <input type="text" name="correo" ref={
-            register({
-                required:{value:true,menssage:'campo requerido'}
-            })}
-             />
-         <div>
-            {errors?.correo?.menssage}
-        </div>
-        <button className="btn btn-success"><BsPencilSquare />
-        <span className="mt-2  ml-2">
-        Editar usuario
-
-        </span>
-        </button>
-      </form>
     )
 }
 export default EditUserForm

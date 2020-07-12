@@ -7,7 +7,7 @@ import Swal from 'sweetalert2'
 
 export default function AddUserForm(props) {
 
- const url = "https://reac-api-rest.000webhostapp.com/api/insert.php"
+ const url = "https://api-new-03.herokuapp.com/insert.php"
 
  const [data, setdata]=useState(
      {

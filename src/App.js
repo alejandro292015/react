@@ -12,9 +12,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
  import Work from './components/workout';
  const App = () =>{
      const usersData = [
-       { id: uuidv4(), name: 'Tania', username: 'floppydiskette', correo :'aaa@gmail.com' },
-       { id: uuidv4(), name: 'Craig', username: 'siliconeidolon' },
-       { id: uuidv4(), name: 'Ben', username: 'benisphere' },
+       { id:'', nombre: '', apellido: '', identificacion :'', correo:'' },
+      ,
      ];
      
      // state
@@ -42,7 +41,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
      // editar
      
      const [editing, setEditing] = useState(false);
-     const [currentUser, setCurrenUser] = useState({id: null, name:'',username:'',correo:''});
+     const [currentUser, setCurrenUser] = useState({id: '', name:'',username:'',correo:''});
      
      const editRow = (user) => {
      setEditing(true);
